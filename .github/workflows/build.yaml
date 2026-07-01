@@ -307,16 +307,16 @@ jobs:
           GPGKey=$(base64 --wrap=0 < RPM-GPG-KEY-${{ github.repository_owner }})
           EOF
 
-      - name: Update static index
-        if: steps.cache.outputs.cache-hit == ''
-        run: |
-          mkdir -p repo/index
-          JSON='{"Registry":"https://ghcr.io/","Results":[]}'
-          for manifest in org.kde.sdk org.kde.sdk.locale org.kde.sdk.debug org.kde.platform org.kde.platform.locale; do
-            DOCKER="$(skopeo inspect docker://ghcr.io/${{ github.repository }}/$manifest:latest | jq -c --arg github_repository "${{ github.repository }}" --arg manifest $manifest '. as $img | { "Name": ($github_repository + "/" + $manifest), "Images": [$img] }')"
-            JSON=$(jq --argjson docker "$DOCKER" '.Results += [ $docker ]' <<< "$JSON" )
-          done
-          echo "$JSON" > repo/index/static
+      # - name: Update static index
+      #   if: steps.cache.outputs.cache-hit == ''
+      #   run: |
+      #     mkdir -p repo/index
+      #     JSON='{"Registry":"https://ghcr.io/","Results":[]}'
+      #     for manifest in org.kde.sdk org.kde.sdk.locale org.kde.sdk.debug org.kde.platform org.kde.platform.locale; do
+      #       DOCKER="$(skopeo inspect docker://ghcr.io/${{ github.repository }}/$manifest:latest | jq -c --arg github_repository "${{ github.repository }}" --arg manifest $manifest '. as $img | { "Name": ($github_repository + "/" + $manifest), "Images": [$img] }')"
+      #       JSON=$(jq --argjson docker "$DOCKER" '.Results += [ $docker ]' <<< "$JSON" )
+      #     done
+      #     echo "$JSON" > repo/index/static
 
       - name: Grab build artifacts
         uses: actions/download-artifact@v4
@@ -339,9 +339,9 @@ jobs:
               mkdir -p repo/refs/remotes
               echo "${GPGKEY}" | gpg --import
               for bundle in ./*-bundle/*.flatpak; do
-                flatpak build-import-bundle repo "$bundle" --gpg-sign=dc812d3cb7855746 --update-appstream || exit 1
+                flatpak build-import-bundle repo "$bundle" --gpg-sign=C88B828E --update-appstream || exit 1
               done
-              flatpak build-update-repo --generate-static-deltas --prune repo --gpg-sign=dc812d3cb7855746
+              flatpak build-update-repo --generate-static-deltas --prune repo --gpg-sign=C88B828E
             '
 
       - name: Upload repo
