@@ -59,8 +59,8 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/tenacityteam/libid3tag.git
-        tag: 0.16.3
-        commit: e02ecf1276b467a8a5dd20c55ce711e6f7116d3e
+        tag: 0.16.4
+        commit: fff52d4e27a6f8e3a714bd304e4258d9e1b0dad8
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -104,8 +104,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/MusicPlayerDaemon/libmpdclient.git
-        tag: v2.24
-        commit: 5073329989bf52676d8c446176a1d29ed3ffccca
+        tag: v2.26
+        commit: ee11992a793e16bcbd81eeef38d0cf20c0396cd3
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -148,8 +148,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/MusicPlayerDaemon/MPD.git
-        tag: v0.24.6
-        commit: c426749d4709e8d4ec4a6808c004625fae37b60d
+        tag: v0.24.12
+        commit: ce910668a88d89eb623d937b6a6eadab68150598
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -186,11 +186,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/nullobsi/cantata.git
-        commit: dc5a0ce77cdf3eaacce29180fe7d2c710b3f31af
+        commit: 3ab7cf06aecf6fc5e096c245270c52cd8c65ae75
+        tag: v3.5.0
         x-checker-data:
-          type: json
-          url: https://api.github.com/repos/nullobsi/cantata/branches/main
-          commit-query: .commit.sha
-          timestamp-query: .commit.commit.committer.date
+          type: git
+          tag-pattern: ^v([\d.]+)$
       - type: file
         path: cantata.sh
