@@ -175,7 +175,7 @@ modules:
           type: git
           url: https://api.github.com/repos/ccxvii/mujs/tags
           tag-pattern: ^([\d.]+)$
-          versions: { ==: 1.3.6 }
+          versions: {==: 1.3.6}
 
   - name: nv-codec-headers
     cleanup:
@@ -405,8 +405,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/vcrhonek/hwdata
-        tag: v0.408
-        commit: 4456b256a1a5b1d1c1c1a60a9f69c59f7743c522
+        tag: v0.409
+        commit: 73fa04de426aefe192505fcbc6c24237a9fd9c9b
         x-checker-data:
           type: json
           url: https://api.github.com/repos/vcrhonek/hwdata/releases/latest
@@ -476,7 +476,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
-        commit: a3d4b5919771a0ae351b80eb266c79681ee529b2
+        commit: 7aa8580cabb85345d75e1e579ddffbe4e84b3f84
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mpv-player/mpv/branches/master
