@@ -337,8 +337,8 @@ modules:
       - --with-python-prefix=${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/vapoursynth/vapoursynth/archive/R72.tar.gz
-        sha256: 650f77feebfd08842b521273f59e0c88f7ba9d7cb5f151d89b79b8dfdd4ce633
+        url: https://github.com/vapoursynth/vapoursynth/archive/R77.tar.gz
+        sha256: f71653355983fc245ef811a64d2b8f5b0ba131c0bb330b3346d435e1926187e2
         x-checker-data:
           type: anitya
           project-id: 15982
@@ -411,8 +411,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/vcrhonek/hwdata
-        tag: v0.408
-        commit: 4456b256a1a5b1d1c1c1a60a9f69c59f7743c522
+        tag: v0.409
+        commit: 73fa04de426aefe192505fcbc6c24237a9fd9c9b
         x-checker-data:
           type: json
           url: https://api.github.com/repos/vcrhonek/hwdata/releases/latest
@@ -477,7 +477,8 @@ modules:
       # save screenshots at xdg-pictures/mpv
       - mkdir -p /app/etc/mpv
       - echo "screenshot-directory=~/.var/app/io.mpv.Mpv/Pictures/mpv" > /app/etc/mpv/mpv.conf
-      - sed  '/^X-KDE-Protocols/s/,smb//; /^X-KDE-Protocols/s/smb,//; /^X-KDE-Protocols/s/smb//; /^X-KDE-Protocols=$/d' -i /app/share/applications/mpv.desktop
+      - sed  '/^X-KDE-Protocols/s/,smb//; /^X-KDE-Protocols/s/smb,//; /^X-KDE-Protocols/s/smb//;
+        /^X-KDE-Protocols=$/d' -i /app/share/applications/mpv.desktop
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
