@@ -30,8 +30,11 @@ output methods are supported.
   </ul>
  </description>
  <releases>
-  <release version="2025.10.22" date="2025-10-22">
+  <release version="2026.07.04" date="2026-07-04">
    <description></description>
+  </release>
+  <release version="2025.10.22" date="2025-10-22">
+   <description/>
   </release>
   <release version="2025.10.14" date="2025-10-14">
    <description/>
