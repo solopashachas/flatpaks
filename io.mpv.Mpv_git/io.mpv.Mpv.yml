@@ -60,7 +60,7 @@ modules:
         mirror-urls:
           - https://luajit.org/git/luajit.git
         disable-shallow-clone: true
-        commit: a2bde60819d83e6f75130ac2c93ee4b3c7615800
+        commit: acb223497d84c65139a7eaaac395b42f112249ac
         x-checker-data:
           type: json
           url: https://api.github.com/repos/LuaJIT/LuaJIT/branches/v2.1
@@ -476,7 +476,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
-        commit: 33111f3212ee272ac4a79fe284a7b55c9b5be997
+        commit: 4c220ffd95c383b191b59a938c52b09ce7dfbc98
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mpv-player/mpv/branches/master
