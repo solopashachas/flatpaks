@@ -61,7 +61,7 @@ modules:
         mirror-urls:
           - https://luajit.org/git/luajit.git
         disable-shallow-clone: true
-        commit: fed6d4782a3939d0b260402e2df5706ca036a290
+        commit: 5dd996ece5aa20087e37cb8c471aec1f88ca5ca2
         x-checker-data:
           type: json
           url: https://api.github.com/repos/LuaJIT/LuaJIT/branches/v2.1
