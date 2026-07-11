@@ -148,8 +148,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/MusicPlayerDaemon/MPD.git
-        tag: v0.24.12
-        commit: ce910668a88d89eb623d937b6a6eadab68150598
+        tag: v0.24.13
+        commit: e9a65d66ef2a64ac6881e6e9e316e8665dcfd4a3
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
