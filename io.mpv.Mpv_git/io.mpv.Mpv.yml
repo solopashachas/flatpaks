@@ -188,8 +188,8 @@ modules:
         url: https://github.com/FFmpeg/nv-codec-headers.git
         mirror-urls:
           - https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
-        tag: n13.0.19.0
-        commit: e844e5b26f46bb77479f063029595293aa8f812d
+        tag: n13.1.15.0
+        commit: 0a6fba9a2820628b8103464f4c8753ee05838baa
         x-checker-data:
           type: git
           tag-pattern: ^n([\d.]+)$
@@ -476,7 +476,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
-        commit: e5486b96d7d06dd148337899bfdc46bf25101663
+        commit: 94335ab87ab225ca3e36e0faeac831639d3e1d4e
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mpv-player/mpv/branches/master
