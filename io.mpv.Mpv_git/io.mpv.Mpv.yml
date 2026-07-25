@@ -60,7 +60,7 @@ modules:
         mirror-urls:
           - https://luajit.org/git/luajit.git
         disable-shallow-clone: true
-        commit: 2460b3ff93a1c955de3d62cfc825de7d68dc272e
+        commit: 346ab587cb235b4ef0b5777b4cd29009808d0cc0
         x-checker-data:
           type: json
           url: https://api.github.com/repos/LuaJIT/LuaJIT/branches/v2.1
@@ -417,8 +417,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.freedesktop.org/emersion/libdisplay-info.git
-        tag: 0.3.0
-        commit: 47a5590e9c4eb35d67651b8c05a55f1a48259329
+        tag: 0.4.0
+        commit: c67a3e9bedb05ab61c7443704a1a107e76254595
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -476,7 +476,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
-        commit: 8ab3f8b66dcf2c2471f4dbba5cee21cda06843b7
+        commit: 8c67647b50059406c5c0444903597281b81516cf
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mpv-player/mpv/branches/master
