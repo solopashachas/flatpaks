@@ -121,8 +121,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/acoustid/chromaprint.git
-        commit: 655c26f0db4d54014c367e3e714a62e3714792ce
-        tag: v1.6.0
+        commit: aed8eba2202dd9d7b3b0a56c77904cc805490d72
+        tag: v1.6.1
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
