@@ -111,8 +111,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/systemd/systemd.git
-        commit: eff9446d505d62c075bed37d606860b38cfe51fb
-        tag: v261.1
+        commit: 4925d9f07fc697efccd98a93046ff535b8832445
+        tag: v261.2
         x-checker-data:
           type: json
           url: https://api.github.com/repos/systemd/systemd/releases/latest
@@ -152,8 +152,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ada-url/ada.git
-        commit: 8d50724a7dea209a05234a445e28f97994b0a5f6
-        tag: v3.4.4
+        commit: b12a893a45809da8103bb4f1e2f6f5ee13f9100b
+        tag: v4.0.0
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ada-url/ada/releases/latest
@@ -294,7 +294,7 @@ modules:
             "https://download.qt.io/archive/qt/\($v[0]).\($v[1])/\($version)/single/qt-everywhere-src-\($version).tar.xz"
       - type: git
         url: https://github.com/desktop-app/patches.git
-        commit: 701cfb4b3d6612188d168f198c842114fd64726f
+        commit: 5c6549de54d24aa11bff0968b92fae06afe5b168
         dest: patches
         x-checker-data:
           type: json
@@ -387,8 +387,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/telegramdesktop/tdesktop.git
-        commit: 56bd59a32a3b304326ec5dab79de2ba71a4c6101
-        tag: v7.0.5
+        commit: fccb2672b05f7b788708e39a7b482e50ebdea510
+        tag: v7.0.6
         x-checker-data:
           type: json
           url: https://api.github.com/repos/telegramdesktop/tdesktop/releases
