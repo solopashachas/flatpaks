@@ -405,8 +405,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/vcrhonek/hwdata
-        tag: v0.409
-        commit: 73fa04de426aefe192505fcbc6c24237a9fd9c9b
+        tag: v0.410
+        commit: 8bb6c48dc2e683777e625d1c9ef02c1b25b741cd
         x-checker-data:
           type: json
           url: https://api.github.com/repos/vcrhonek/hwdata/releases/latest
@@ -476,7 +476,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
-        commit: 74356c0fc669d21af9daac5a11f296123efd0684
+        commit: 1d15686142fd5d53c954aab7526cedab05ef9dc3
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mpv-player/mpv/branches/master
