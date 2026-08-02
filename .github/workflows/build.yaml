@@ -157,7 +157,7 @@ jobs:
             -v /proc:/host/proc \
             -v "${GITHUB_WORKSPACE}:/work" \
             -w /work \
-            ghcr.io/solopasha/flatpaks/buildroot:latest \
+            ghcr.io/solopashachas/flatpaks/buildroot:latest \
             /bin/bash -c '
               max_retries=5
               sleep_seconds=7
@@ -189,7 +189,7 @@ jobs:
             -v "${GITHUB_WORKSPACE}:/work" \
             -v "${GITHUB_WORKSPACE}/flatpak:/home/builduser/.local/share/flatpak" \
             -w /work \
-            ghcr.io/solopasha/flatpaks/buildroot:latest \
+            ghcr.io/solopashachas/flatpaks/buildroot:latest \
             /bin/bash -c '
               flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
               flatpak remote-add --user --if-not-exists oci oci+https://solopasha.github.io/flatpaks
@@ -216,7 +216,7 @@ jobs:
             --entrypoint="" \
             -v "${GITHUB_WORKSPACE}:/work" \
             -w /work \
-            ghcr.io/solopasha/flatpaks/buildroot:latest \
+            ghcr.io/solopashachas/flatpaks/buildroot:latest \
             /bin/bash -c '
               flatpak build-bundle repo ${{ matrix.app.dirname }}.flatpak \
                 --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo \
@@ -285,7 +285,7 @@ jobs:
             --entrypoint="" \
             -v "${GITHUB_WORKSPACE}:/work" \
             -w /work \
-            ghcr.io/solopasha/flatpaks/buildroot:latest \
+            ghcr.io/solopashachas/flatpaks/buildroot:latest \
             /bin/bash -c '
               ostree init --repo repo --mode=archive-z2
               ostree remote add ${{ github.repository_owner }} \
@@ -334,7 +334,7 @@ jobs:
             -e GPGKEY \
             -v "${GITHUB_WORKSPACE}:/work" \
             -w /work \
-            ghcr.io/solopasha/flatpaks/buildroot:latest \
+            ghcr.io/solopashachas/flatpaks/buildroot:latest \
             /bin/bash -c '
               mkdir -p repo/refs/remotes
               echo "${GPGKEY}" | gpg --import

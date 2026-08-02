@@ -1,4 +1,4 @@
-ARG VERSION=42
+ARG VERSION=44
 
 FROM registry.fedoraproject.org/fedora-minimal:$VERSION
 
@@ -18,15 +18,15 @@ EOF
 
 RUN rm /etc/yum.repos.d/fedora-cisco-openh264.repo && \
     dnf -y up && dnf -y install --setopt=install_weak_deps=False \
-        bzip2 \
-        dbus-daemon \
-        flatpak-builder \
-        git-core \
-        jq \
-        patch \
-        skopeo \
-        tar \
-        zstd && \
+    bzip2 \
+    dbus-daemon \
+    flatpak-builder \
+    git-core \
+    jq \
+    patch \
+    skopeo \
+    tar \
+    zstd && \
     dnf clean all && \
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo && \
     useradd -m -u 1001 builduser
