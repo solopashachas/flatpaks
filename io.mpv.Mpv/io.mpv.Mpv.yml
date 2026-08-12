@@ -395,8 +395,8 @@ modules:
         url: https://github.com/FFmpeg/FFmpeg.git
         mirror-urls:
           - https://git.ffmpeg.org/ffmpeg.git
-        commit: d32b387f2b0a484599d4587d651891f0c63c4238
-        tag: n9.0
+        commit: bf1b838f2ab88b4f8fd83443325c782ea0e0f7fa
+        tag: n9.0.1
         x-checker-data:
           type: git
           tag-pattern: ^n([\d.]{3,7})$
