@@ -19,6 +19,7 @@ EOF
 RUN rm /etc/yum.repos.d/fedora-cisco-openh264.repo && \
     dnf -y up && dnf -y install --setopt=install_weak_deps=False \
     bzip2 \
+    ccache \
     dbus-daemon \
     flatpak-builder \
     git-core \
