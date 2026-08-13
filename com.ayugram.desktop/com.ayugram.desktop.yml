@@ -1,8 +1,8 @@
-id: org.telegram.desktop
+id: com.ayugram.desktop
 runtime: org.gnome.Platform
 runtime-version: '50'
 sdk: org.gnome.Sdk
-command: Telegram
+command: AyuGram
 finish-args:
   - --share=ipc
   - --share=network
@@ -280,41 +280,10 @@ modules:
       - type: archive
         url: https://download.qt.io/archive/qt/6.11/6.11.1/single/qt-everywhere-src-6.11.1.tar.xz
         sha256: 252acef8c5ae68074d91cadba2ee4a83465051bbb970dd26e8f0daa0f3904e03
-        x-checker-data:
-          type: json
-          parent-id: tdesktop-git-0
-          tag-data-url: >-
-            "https://github.com/telegramdesktop/tdesktop/raw/\($parent.new.tag//$parent.current.tag)/snap/snapcraft.yaml"
-          tag-query: >-
-            .parts.qt."source-tag"
-          version-query: >-
-            $tag | sub("^[vV]"; "")
-          timestamp-data-url: >-
-            "https://api.github.com/repos/qt/qt5/commits/\($tag)"
-          timestamp-query: >-
-            .commit.committer.date
-          url-query: >-
-            $version | split(".") as $v |
-            "https://download.qt.io/archive/qt/\($v[0]).\($v[1])/\($version)/single/qt-everywhere-src-\($version).tar.xz"
       - type: git
         url: https://github.com/desktop-app/patches.git
         commit: 27efa67b60881c52b112cf924d705e573d03a0ab
         dest: patches
-        x-checker-data:
-          type: json
-          parent-id: tdesktop-git-0
-          commit-data-url: >-
-            "https://github.com/telegramdesktop/tdesktop/raw/\($parent.new.tag//$parent.current.tag)/snap/snapcraft.yaml"
-          commit-query: >-
-            .parts.patches."source-commit"
-          version-data-url: >-
-            "https://api.github.com/repos/desktop-app/patches/commits/\($commit)"
-          version-query: >-
-            "desktop-app/patches@\(.sha[0:7])"
-          timestamp-data-url: >-
-            "https://api.github.com/repos/desktop-app/patches/commits/\($commit)"
-          timestamp-query: >-
-            .commit.committer.date
       - type: shell
         commands:
           - |
@@ -332,21 +301,6 @@ modules:
       - type: git
         url: https://github.com/desktop-app/tg_owt.git
         commit: 26068e29bfa8d74a9dc9c8f7f94172fafbc262b8
-        x-checker-data:
-          type: json
-          parent-id: tdesktop-git-0
-          commit-data-url: >-
-            "https://github.com/telegramdesktop/tdesktop/raw/\($parent.new.tag//$parent.current.tag)/snap/snapcraft.yaml"
-          commit-query: >-
-            .parts.webrtc."source-commit"
-          version-data-url: >-
-            "https://api.github.com/repos/desktop-app/tg_owt/commits/\($commit)"
-          version-query: >-
-            "desktop-app/tg_owt@\(.sha[0:7])"
-          timestamp-data-url: >-
-            "https://api.github.com/repos/desktop-app/tg_owt/commits/\($commit)"
-          timestamp-query: >-
-            .commit.committer.date
     cleanup:
       - '*'
 
@@ -359,21 +313,6 @@ modules:
       - type: git
         url: https://github.com/tdlib/td.git
         commit: 51743dfd01dff6179e2d8f7095729caa4e2222e9
-        x-checker-data:
-          type: json
-          parent-id: tdesktop-git-0
-          commit-data-url: >-
-            "https://github.com/telegramdesktop/tdesktop/raw/\($parent.new.tag//$parent.current.tag)/snap/snapcraft.yaml"
-          commit-query: >-
-            .parts.tde2e."source-commit"
-          version-data-url: >-
-            "https://api.github.com/repos/tdlib/td/commits/\($commit)"
-          version-query: >-
-            "tdlib/td@\(.sha[0:7])"
-          timestamp-data-url: >-
-            "https://api.github.com/repos/tdlib/td/commits/\($commit)"
-          timestamp-query: >-
-            .commit.committer.date
     cleanup:
       - '*'
 
@@ -392,17 +331,7 @@ modules:
       - ccache --evict-older-than 1d
     sources:
       - type: git
-        url: https://github.com/telegramdesktop/tdesktop.git
-        commit: a1e89e1f64f08cb058caf1c61ff43f319f98a6ec
-        tag: v7.0.9
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/telegramdesktop/tdesktop/releases
-          tag-query: first | .tag_name
-          timestamp-query: first | .published_at
-          version-query: $tag | sub("^[vV]"; "")
-      - type: patch
-        paths:
-          - block-sponsored_messages.patch
+        url: https://github.com/AyuGram/AyuGramDesktop.git
+        commit: db3b9891cb0b04ebb7d8c0e71ada3bcc669b910a
     cleanup:
       - /share/icons/hicolor/512x512@2
