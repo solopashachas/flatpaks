@@ -207,14 +207,29 @@ jobs:
                 --ccache \
                 builddir ${{ matrix.app.manifest }}
             '
-            ccache -d .flatpak-builder/ccache -s
-            ccache -d .flatpak-builder/ccache --evict-older-than 1d
+      - name: Cacche stats
+        run: |
+          docker run --rm \
+            --security-opt seccomp=${GITHUB_WORKSPACE}/flatpak.seccomp.json \
+            --security-opt apparmor=unconfined \
+            --cap-drop all \
+            --network=none \
+            --entrypoint="" \
+            -v /proc:/host/proc \
+            -v "${GITHUB_WORKSPACE}:/work" \
+            -w /work \
+            ghcr.io/solopashachas/flatpaks/buildroot:latest \
+            /bin/bash -c '
+              ccache -d .flatpak-builder/ccache -s
+              ccache -d .flatpak-builder/ccache --evict-older-than 1d
+            '
 
       - name: Bundles
         run: |
           docker run --rm \
             --cap-drop all \
             --entrypoint="" \
+            --network=none \
             -v "${GITHUB_WORKSPACE}:/work" \
             -w /work \
             ghcr.io/solopashachas/flatpaks/buildroot:latest \
