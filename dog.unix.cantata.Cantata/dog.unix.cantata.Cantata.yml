@@ -91,8 +91,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/knik0/faad2.git
-        tag: 2.11.2
-        commit: 673a22a3c7c33e96e2ff7aae7c4d2bc190dfbf92
+        tag: 2.11.3
+        commit: 6918ebb51b8f7e86278da15884bd7114e4b9661e
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
