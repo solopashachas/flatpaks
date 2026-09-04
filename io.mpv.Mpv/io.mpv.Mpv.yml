@@ -61,7 +61,7 @@ modules:
         mirror-urls:
           - https://luajit.org/git/luajit.git
         disable-shallow-clone: true
-        commit: 1ee778a4e37122d8ca7d5733c590a47dafd6b15c
+        commit: 24c20c94e7db195b640854619577441f9b4bc6be
         x-checker-data:
           type: json
           url: https://api.github.com/repos/LuaJIT/LuaJIT/branches/v2.1
@@ -406,8 +406,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/vcrhonek/hwdata
-        tag: v0.410
-        commit: 8bb6c48dc2e683777e625d1c9ef02c1b25b741cd
+        tag: v0.411
+        commit: 7fc63d411377e40aab66bfbf77dce6a439c3fe87
         x-checker-data:
           type: json
           url: https://api.github.com/repos/vcrhonek/hwdata/releases/latest
