@@ -282,7 +282,7 @@ modules:
             "https://download.qt.io/archive/qt/\($v[0]).\($v[1])/\($version)/single/qt-everywhere-src-\($version).tar.xz"
       - type: git
         url: https://github.com/desktop-app/patches.git
-        commit: c2cc44fca4a8d0e20d1ef0f40884d717c750f0a4
+        commit: 519aaa084608fa6f9a2bfbd1959d133c44d94227
         dest: patches
         x-checker-data:
           type: json
@@ -374,7 +374,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/dkaraush/tlottie.git
-        commit: 4b940c7942fbde8ee56f10f39a5224a4153bd91e
+        commit: 31f1b542f88e7b4be9a01e749920d857535fc715
         x-checker-data:
           type: json
           parent-id: tdesktop-git-0
@@ -410,8 +410,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/telegramdesktop/tdesktop.git
-        commit: 272f6f5c2d29d8cdb3aec15907d616b87451a3ca
-        tag: v7.2.8
+        commit: fb2e33209517e1a34637d837bfadb3783f2fd59c
+        tag: v7.2.9
         x-checker-data:
           type: json
           url: https://api.github.com/repos/telegramdesktop/tdesktop/releases
