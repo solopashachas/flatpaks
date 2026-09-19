@@ -390,6 +390,9 @@ modules:
             "https://api.github.com/repos/dkaraush/tlottie/commits/\($commit)"
           timestamp-query: >-
             .commit.committer.date
+      - type: patch
+        paths:
+          - tlottie.patch
       - tdesktop_rust.yml
     cleanup:
       - '*'
