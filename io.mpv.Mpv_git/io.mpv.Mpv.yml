@@ -394,8 +394,8 @@ modules:
         url: https://github.com/FFmpeg/FFmpeg.git
         mirror-urls:
           - https://git.ffmpeg.org/ffmpeg.git
-        commit: bf1b838f2ab88b4f8fd83443325c782ea0e0f7fa
-        tag: n9.0.1
+        commit: 946fcce07b6dcd0331c8cc609192aeff5e1924f8
+        tag: n9.0.2
         x-checker-data:
           type: git
           tag-pattern: ^n([\d.]{3,7})$
@@ -476,7 +476,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
-        commit: 0b7ed670f7c353dd3dd4f8ae0fc788a181a15aa6
+        commit: e76a35ec95b27f5cf2d27b043b5e2e0d90e468ae
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mpv-player/mpv/branches/master
