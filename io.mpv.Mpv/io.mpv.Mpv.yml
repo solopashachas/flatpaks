@@ -347,8 +347,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/GPUOpen-LibrariesAndSDKs/AMF.git
-        tag: v1.5.2
-        commit: eadd00804d5f7e5cd8c85d540073198312870776
+        tag: v1.5.3
+        commit: 8c648005e07d4309033282bfd9947df2c7e76104
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
