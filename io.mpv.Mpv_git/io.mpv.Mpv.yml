@@ -346,8 +346,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/GPUOpen-LibrariesAndSDKs/AMF.git
-        tag: v1.5.2
-        commit: eadd00804d5f7e5cd8c85d540073198312870776
+        tag: v1.5.3
+        commit: 8c648005e07d4309033282bfd9947df2c7e76104
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -476,7 +476,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
-        commit: 178242c75ee2ff56f4d03a9ac91c3c14a300d8a0
+        commit: 3186d369f9f090cd1363be0ac46a037824b702c6
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mpv-player/mpv/branches/master
