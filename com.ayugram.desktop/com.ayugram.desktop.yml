@@ -1,6 +1,6 @@
 id: com.ayugram.desktop
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 command: AyuGram
 finish-args:
@@ -20,10 +20,9 @@ finish-args:
   - --talk-name=org.sigxcpu.Feedback
   - --unset-env=QT_PLUGIN_PATH
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.llvm22
+  - org.freedesktop.Sdk.Extension.rust-stable
 build-options:
-  append-path: /usr/lib/sdk/llvm22/bin
-  append-ld-library-path: /usr/lib/sdk/llvm22/lib
+  append-path: /usr/lib/sdk/rust-stable/bin
   cflags: -g0
   cxxflags: -g0
   strip: true
@@ -32,6 +31,10 @@ build-options:
     CCACHE_COMPILERCHECK: '%compiler% -v'
     CMAKE_BUILD_TYPE: None
     CMAKE_PREFIX_PATH: /app
+    CARGO_NET_OFFLINE: true
+    CARGO_PROFILE_RELEASE_OPT_LEVEL: 3
+    CARGO_PROFILE_RELEASE_LTO: off
+    CARGO_PROFILE_RELEASE_PANIC: unwind
 modules:
   - name: pkg-config
     buildsystem: simple
@@ -165,25 +168,6 @@ modules:
     cleanup:
       - '*'
 
-  - name: protobuf
-    buildsystem: cmake-ninja
-    builddir: true
-    config-opts:
-      - -Dprotobuf_BUILD_TESTS=OFF
-    sources:
-      - type: git
-        url: https://github.com/protocolbuffers/protobuf.git
-        commit: 2c74169b34066ceb8ddb6b882fcb3fb32d737a55
-        tag: v36.2
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/protocolbuffers/protobuf/releases/latest
-          tag-query: .tag_name
-          timestamp-query: .published_at
-          version-query: $tag | sub("^[vV]"; "")
-    cleanup:
-      - '*'
-
   - name: mozjpeg
     buildsystem: cmake-ninja
     builddir: true
@@ -278,11 +262,11 @@ modules:
       - -DINPUT_openssl=linked
     sources:
       - type: archive
-        url: https://download.qt.io/archive/qt/6.11/6.11.1/single/qt-everywhere-src-6.11.1.tar.xz
-        sha256: 252acef8c5ae68074d91cadba2ee4a83465051bbb970dd26e8f0daa0f3904e03
+        url: https://download.qt.io/archive/qt/6.11/6.11.2/single/qt-everywhere-src-6.11.2.tar.xz
+        sha256: 6dcfbca271d76a6502741a2c0dc6fc98ef7dd0b7b4cfd0abcebb285a86a26f33
       - type: git
         url: https://github.com/desktop-app/patches.git
-        commit: 27efa67b60881c52b112cf924d705e573d03a0ab
+        commit: c6b2868d527e2d00a2438e95225a22ce9346d79f
         dest: patches
       - type: shell
         commands:
@@ -300,7 +284,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/desktop-app/tg_owt.git
-        commit: 26068e29bfa8d74a9dc9c8f7f94172fafbc262b8
+        commit: 9826d0e27894a575a63d4b15b2acf8e749e3da67
     cleanup:
       - '*'
 
@@ -313,6 +297,27 @@ modules:
       - type: git
         url: https://github.com/tdlib/td.git
         commit: 51743dfd01dff6179e2d8f7095729caa4e2222e9
+    cleanup:
+      - '*'
+
+  - name: tdesktop_rust
+    buildsystem: simple
+    build-options:
+      env:
+        CARGO_HOME: /run/build/tdesktop_rust/cargo
+    build-commands:
+      - cargo rustc --offline --lib --release --locked --features c-api --crate-type
+        staticlib
+      - objcopy --strip-debug target/release/libtlottie.a $FLATPAK_DEST/lib/libtlottie.a
+      - install -Dm644 include/tlottie.h $FLATPAK_DEST/include/tlottie/tlottie.h
+    sources:
+      - type: git
+        url: https://github.com/dkaraush/tlottie.git
+        commit: 31f1b542f88e7b4be9a01e749920d857535fc715
+      - type: patch
+        paths:
+          - tlottie.patch
+      - tdesktop_rust.yml
     cleanup:
       - '*'
 
@@ -332,6 +337,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/AyuGram/AyuGramDesktop.git
-        commit: db3b9891cb0b04ebb7d8c0e71ada3bcc669b910a
+        commit: d4b7546e77f93ac4c9bb53a3fcf7e9ffbbecf1b5
+        tag: v7.2.9
     cleanup:
       - /share/icons/hicolor/512x512@2
