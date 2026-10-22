@@ -60,7 +60,7 @@ modules:
         mirror-urls:
           - https://luajit.org/git/luajit.git
         disable-shallow-clone: true
-        commit: 95f931cb1ee7ab14f249d61fb3734803429025f8
+        commit: a4c064539ea931274d407e1249b4bb575424a0f4
         x-checker-data:
           type: json
           url: https://api.github.com/repos/LuaJIT/LuaJIT/branches/v2.1
@@ -476,7 +476,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
-        commit: a43ab319fdb7aec31874999e5562c9975328cbda
+        commit: 488fec0789e5026804ac8dd03fb749570416d48a
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mpv-player/mpv/branches/master
@@ -534,8 +534,8 @@ modules:
       - install yt-dlp /app/bin
     sources:
       - type: archive
-        url: https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp.tar.gz
-        sha256: 072aad4f2a7604e92155f61a275a4752dc64046c8f6d90df3710525d94cd37c1
+        url: https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.21/yt-dlp.tar.gz
+        sha256: 5f1e419f76e49c996061511ef9eacce50d4aa4959c34480539562e9e1295708d
         x-checker-data:
           type: json
           url: https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest
